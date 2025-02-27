@@ -3,52 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chúc Mừng Sinh Nhật Bé Cá Voi</title>
-  <style>
-    /* Nền động màu xanh nước biển */
-    @keyframes wave {
-      0% {
-        background-color: #00bcd4;
-      }
-      50% {
-        background-color: #006994;
-      }
-      100% {
-        background-color: #00bcd4;
-      }
-    }
+  <title>Chúc Mừng Sinh Nhật Bé Cá Voi 🐳</title>
 
+  <!-- Link tới Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Cài đặt màu chủ đạo từ trắng sang xanh nước biển */
     body {
-      font-family: 'Dancing Script', cursive; /* Font chữ viết tay */
-      background: #00bcd4;
-      animation: wave 10s infinite; /* Hiệu ứng nền động */
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #00bcd4);
       color: white;
       text-align: center;
-      padding: 50px;
       margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+    h1, p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5em;
+      color: #ffffff;
+    }
+
+    /* Trang 1 - Hộp quà động */
+    .gift-box {
+      width: 200px;
+      height: 200px;
+      background-color: #ff4081;
+      margin: 50px auto;
+      position: relative;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      animation: shake 0.5s infinite alternate;
+    }
+
+    .gift-box:before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+
+    .gift-box-text {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2em;
       color: white;
     }
 
-    p {
-      font-size: 1.5em;
-      color: white;
+    /* Hiệu ứng lắc cho hộp quà */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+      100% { transform: translateX(-10px); }
     }
 
-    .heart {
+    /* Hiệu ứng fade in/out cho trang 2 */
+    .fade {
+      opacity: 0;
+      animation: fadeInOut 5s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      50% { opacity: 0; }
+      75% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* Hiệu ứng nhấp nháy cho Happy Birthday */
+    .happy-birthday {
+      font-family: 'Pacifico', cursive;
       font-size: 3em;
       color: #ff4081;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Trang 3 - Hình ảnh và lời chúc */
+    .img-container {
+      margin-top: 50px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .img-container img {
+      width: 300px;
+      border-radius: 50%;
+      border: 5px solid white;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
   </style>
-  <!-- Link đến Google Font 'Dancing Script' cho font chữ viết tay -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Chúc Mừng Sinh Nhật Bé Cá Voi🐳</h1>
-  <p>Chúc anh thêm tuổi mới, thêm sức khỏe, thêm vui vẻ, thêm an nhiên.</p>
+
+<!-- Trang 1: Hộp quà động -->
+<div id="page1" class="page">
+  <div class="gift-box" onclick="goToPage2()">
+    <div class="gift-box-text">Anh hãy bấm mở quà nhé!</div>
+  </div>
+</div>
+
+<!-- Trang 2: Lời chúc sinh nhật -->
+<div id="page2" class="page" style="display: none;">
+  <div class="fade">Hôm nay là</div>
+  <div class="fade">28/02/2025</div>
+  <div class="fade">Là</div>
+  <div class="fade">Sinh nhật Bé Cá Voi</div>
+  <div class="fade">Chúc anh</div>
+  <div class="fade">Thêm tuổi mới</div>
+  <div class="fade">Thêm sức khỏe</div>
+  <div class="fade">Thêm vui vẻ</div>
+  <div class="fade">Thêm an nhiên</div>
+</div>
+
+<!-- Trang 3: Hình ảnh và lời chúc Happy Birthday -->
+<div id="page3" class="page" style="display: none;">
+  <div class="img-container">
+    <img src="https://example.com/happy-birthday-image.jpg" alt="Happy Birthday">
+  </div>
+  <div class="happy-birthday">Happy Birthday!</div>
+</div>
+
+<script>
+  // Chuyển sang trang 2 sau khi bấm vào hộp quà
+  function goToPage2() {
+    document.getElementById('page1').style.display = 'none';
+    document.getElementById('page2').style.display = 'block';
+    // Sau 5s, chuyển sang trang 3
+    setTimeout(() => {
+      document.getElementById('page2').style.display = 'none';
+      document.getElementById('page3').style.display = 'block';
+    }, 5000);
+  }
+</script>
+
 </body>
 </html>
