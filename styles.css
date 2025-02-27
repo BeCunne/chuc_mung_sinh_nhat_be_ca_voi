@@ -1,5 +1,6 @@
+/* Áp dụng font chữ Dance Script toàn trang */
 body {
-    font-family: 'Sacramento', cursive;
+    font-family: 'Dance Script', cursive; /* Sử dụng font Dance Script */
     background-color: #1E90FF; /* Màu xanh dương chủ đạo */
     color: white;
     text-align: center;
@@ -28,7 +29,7 @@ body {
 }
 
 #happyBirthday {
-    font-size: 3rem;
+    font-size: 4rem; /* Kích thước chữ lớn hơn */
     animation: moveUp 1.5s ease-out;
 }
 
