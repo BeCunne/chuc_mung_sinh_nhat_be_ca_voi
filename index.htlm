@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc Mừng Sinh Nhật Bé Cá Voi</title>
+  <style>
+    /* Nền động màu xanh nước biển */
+    @keyframes wave {
+      0% {
+        background-color: #00bcd4;
+      }
+      50% {
+        background-color: #006994;
+      }
+      100% {
+        background-color: #00bcd4;
+      }
+    }
+
+    body {
+      font-family: 'Dancing Script', cursive; /* Font chữ viết tay */
+      background: #00bcd4;
+      animation: wave 10s infinite; /* Hiệu ứng nền động */
+      color: white;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: white;
+    }
+
+    .heart {
+      font-size: 3em;
+      color: #ff4081;
+    }
+  </style>
+  <!-- Link đến Google Font 'Dancing Script' cho font chữ viết tay -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Chúc Mừng Sinh Nhật Bé Cá Voi🐳</h1>
+  <p>Chúc anh thêm tuổi mới, thêm sức khỏe, thêm vui vẻ, thêm an nhiên.</p>
+</body>
+</html>
