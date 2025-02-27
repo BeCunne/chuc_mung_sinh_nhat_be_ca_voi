@@ -1,155 +1,156 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chúc Mừng Sinh Nhật Bé Cá Voi 🐳</title>
+<html lang="vi" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css"> <!-- Đảm bảo bạn có file CSS -->
+    <title>Chúc Mừng Sinh Nhật Bé Cá Voi</title>
+    <style>
+      body {
+        font-family: 'VNF-Fulltype', sans-serif;
+        background: linear-gradient(to bottom, #ffffff, #1e90ff);
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
 
-  <!-- Link tới Google Fonts (Font viết tay tiếng Việt) -->
-  <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+      h1 {
+        font-size: 3em;
+        font-family: 'Brush Script MT', cursive; /* Chữ viết tay */
+      }
 
-  <style>
-    /* Cài đặt màu chủ đạo từ trắng sang xanh nước biển */
-    body {
-      font-family: 'Cookie', cursive;
-      background: linear-gradient(to bottom, #ffffff, #00bcd4);
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-    }
+      .gift-box {
+        margin-top: 50px;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+      }
 
-    /* Trang 1 - Hộp quà động */
-    .gift-box {
-      width: 200px;
-      height: 200px;
-      background-color: #ff4081;
-      margin: 50px auto;
-      position: relative;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      animation: shake 0.5s infinite alternate;
-    }
+      .gift-box img {
+        width: 300px;
+        height: auto;
+        animation: bounce 1.5s ease infinite; /* Hiệu ứng nhảy cho hộp quà */
+      }
 
-    .gift-box:before {
-      content: '';
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 60px;
-      background-color: #ffffff;
-      border-radius: 50%;
-    }
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
 
-    .gift-box-text {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.5em;
-      color: white;
-    }
+      .gift-box-text {
+        margin-top: 20px;
+        font-size: 1.5em;
+        font-family: 'Brush Script MT', cursive;
+      }
 
-    /* Hiệu ứng lắc cho hộp quà */
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(10px); }
-      100% { transform: translateX(-10px); }
-    }
+      .button {
+        margin-top: 30px;
+      }
 
-    /* Hiệu ứng fade in/out cho trang 2 */
-    .fade {
-      opacity: 0;
-      animation: fadeInOut 5s ease-in-out infinite;
-    }
+      .button button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        background-color: #ff7f50;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
 
-    @keyframes fadeInOut {
-      0% { opacity: 0; }
-      25% { opacity: 1; }
-      50% { opacity: 0; }
-      75% { opacity: 1; }
-      100% { opacity: 0; }
-    }
+      .button button:hover {
+        background-color: #ff6347;
+      }
 
-    /* Hiệu ứng nhấp nháy cho Happy Birthday */
-    .happy-birthday {
-      font-family: 'Cookie', cursive;
-      font-size: 3em;
-      color: #00bcd4;
-      animation: blink 1s infinite;
-    }
+      #page2 {
+        display: none;
+        padding: 50px;
+      }
 
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
+      .page-text {
+        font-size: 2em;
+        font-family: 'Brush Script MT', cursive;
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+      }
 
-    /* Trang 3 - Hình ảnh và lời chúc */
-    .img-container {
-      margin-top: 50px;
-      animation: fadeIn 2s ease-in-out;
-    }
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
 
-    .img-container img {
-      width: 300px;
-      border-radius: 50%;
-      border: 5px solid white;
-    }
+      .happy-birthday {
+        font-size: 3em;
+        color: #1e90ff;
+        animation: blink 1s infinite;
+      }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-  </style>
-</head>
-<body>
+      @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+      }
 
-<!-- Trang 1: Hộp quà động -->
-<div id="page1" class="page">
-  <div class="gift-box" onclick="goToPage2()">
-    <div class="gift-box-text">Anh hãy bấm mở quà nhé!</div>
-  </div>
-</div>
+      .img-container img {
+        width: 400px;
+        height: auto;
+      }
 
-<!-- Trang 2: Lời chúc sinh nhật -->
-<div id="page2" class="page" style="display: none;">
-  <div class="fade">Hôm nay là</div>
-  <div class="fade">28/02/2025</div>
-  <div class="fade">Là</div>
-  <div class="fade">Sinh nhật Bé Cá Voi</div>
-  <div class="fade">Chúc anh</div>
-  <div class="fade">Thêm tuổi mới</div>
-  <div class="fade">Thêm sức khỏe</div>
-  <div class="fade">Thêm vui vẻ</div>
-  <div class="fade">Thêm an nhiên</div>
-</div>
+      .made {
+        margin-top: 20px;
+        font-size: 1.5em;
+        font-family: 'Brush Script MT', cursive;
+      }
+    </style>
+  </head>
 
-<!-- Trang 3: Hình ảnh và lời chúc Happy Birthday -->
-<div id="page3" class="page" style="display: none;">
-  <div class="img-container">
-    <img src="https://drive.google.com/uc?export=view&id=1cOn3UuQqor7ZHSKoAUTEifyq_SoCF1Ih" alt="Happy Birthday Image">
-  </div>
-  <div class="happy-birthday">Happy Birthday!</div>
-</div>
+  <body id="a">
+    <!-- Trang 1: Hình hộp quà -->
+    <div id="page1">
+      <div class="gift-box" onclick="goToPage2()">
+        <img src="https://i.pinimg.com/originals/45/df/fb/45dffbcebb61f7c2b4b8c7f5c57b3458.gif" alt="Gift Box Animation">
+        <div class="gift-box-text">Anh hãy bấm mở quà nhé!</div>
+      </div>
+      <div class="button">
+        <button onclick="goToPage2()">Bấm vào đây!</button>
+      </div>
+    </div>
 
-<script>
-  // Chuyển sang trang 2 sau khi bấm vào hộp quà
-  function goToPage2() {
-    document.getElementById('page1').style.display = 'none';
-    document.getElementById('page2').style.display = 'block';
-    // Sau 5s, chuyển sang trang 3
-    setTimeout(() => {
-      document.getElementById('page2').style.display = 'none';
-      document.getElementById('page3').style.display = 'block';
-    }, 5000);
-  }
-</script>
+    <!-- Trang 2: Lời chúc sinh nhật -->
+    <div id="page2">
+      <div class="page-text">Hôm nay là 28/02/2025</div>
+      <div class="page-text">Là sinh nhật Bé Cá Voi</div>
+      <div class="page-text">Chúc anh thêm tuổi mới</div>
+      <div class="page-text">Thêm sức khỏe</div>
+      <div class="page-text">Thêm vui vẻ</div>
+      <div class="page-text">Thêm an nhiên</div>
+    </div>
 
-</body>
+    <!-- Trang 3: Hình ảnh Happy Birthday -->
+    <div id="page3" style="display: none;">
+      <div class="img-container">
+        <img src="https://drive.google.com/uc?export=view&id=1cOn3UuQqor7ZHSKoAUTEifyq_SoCF1Ih" alt="Happy Birthday Image">
+      </div>
+      <div class="happy-birthday">Happy Birthday!</div>
+    </div>
+
+    <script>
+      function goToPage2() {
+        // Chuyển từ trang 1 sang trang 2 với hiệu ứng mờ
+        document.getElementById('page1').style.display = 'none';
+        document.getElementById('page2').style.display = 'block';
+        
+        // Sau một thời gian, chuyển sang trang 3
+        setTimeout(function() {
+          document.getElementById('page2').style.display = 'none';
+          document.getElementById('page3').style.display = 'block';
+        }, 6000); // Chờ 6 giây để chuyển trang
+      }
+    </script>
+
+    <h1 class="made">Made by @hieuhfgr#8289</h1>
+  </body>
 </html>
