@@ -18,8 +18,8 @@ body {
 }
 
 .cake-animation img {
-    width: 200px;
-    height: 200px;
+    width: 736px;
+    height: 569px;
     animation: bounce 2s infinite alternate;
 }
 
