@@ -1,156 +1,29 @@
 <!DOCTYPE html>
-<html lang="vi" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css"> <!-- Đảm bảo bạn có file CSS -->
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chúc Mừng Sinh Nhật Bé Cá Voi</title>
-    <style>
-      body {
-        font-family: 'VNF-Fulltype', sans-serif;
-        background: linear-gradient(to bottom, #ffffff, #1e90ff);
-        color: #fff;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-      }
-
-      h1 {
-        font-size: 3em;
-        font-family: 'Brush Script MT', cursive; /* Chữ viết tay */
-      }
-
-      .gift-box {
-        margin-top: 50px;
-        text-align: center;
-        position: relative;
-        cursor: pointer;
-      }
-
-      .gift-box img {
-        width: 300px;
-        height: auto;
-        animation: bounce 1.5s ease infinite; /* Hiệu ứng nhảy cho hộp quà */
-      }
-
-      @keyframes bounce {
-        0%, 100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .gift-box-text {
-        margin-top: 20px;
-        font-size: 1.5em;
-        font-family: 'Brush Script MT', cursive;
-      }
-
-      .button {
-        margin-top: 30px;
-      }
-
-      .button button {
-        padding: 10px 20px;
-        font-size: 1.2em;
-        background-color: #ff7f50;
-        border: none;
-        color: white;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-
-      .button button:hover {
-        background-color: #ff6347;
-      }
-
-      #page2 {
-        display: none;
-        padding: 50px;
-      }
-
-      .page-text {
-        font-size: 2em;
-        font-family: 'Brush Script MT', cursive;
-        opacity: 0;
-        animation: fadeIn 3s forwards;
-      }
-
-      @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-      }
-
-      .happy-birthday {
-        font-size: 3em;
-        color: #1e90ff;
-        animation: blink 1s infinite;
-      }
-
-      @keyframes blink {
-        0% { opacity: 1; }
-        50% { opacity: 0; }
-        100% { opacity: 1; }
-      }
-
-      .img-container img {
-        width: 400px;
-        height: auto;
-      }
-
-      .made {
-        margin-top: 20px;
-        font-size: 1.5em;
-        font-family: 'Brush Script MT', cursive;
-      }
-    </style>
-  </head>
-
-  <body id="a">
-    <!-- Trang 1: Hình hộp quà -->
-    <div id="page1">
-      <div class="gift-box" onclick="goToPage2()">
-        <img src="https://i.pinimg.com/originals/45/df/fb/45dffbcebb61f7c2b4b8c7f5c57b3458.gif" alt="Gift Box Animation">
-        <div class="gift-box-text">Anh hãy bấm mở quà nhé!</div>
-      </div>
-      <div class="button">
-        <button onclick="goToPage2()">Bấm vào đây!</button>
-      </div>
-    </div>
-
-    <!-- Trang 2: Lời chúc sinh nhật -->
-    <div id="page2">
-      <div class="page-text">Hôm nay là 28/02/2025</div>
-      <div class="page-text">Là sinh nhật Bé Cá Voi</div>
-      <div class="page-text">Chúc anh thêm tuổi mới</div>
-      <div class="page-text">Thêm sức khỏe</div>
-      <div class="page-text">Thêm vui vẻ</div>
-      <div class="page-text">Thêm an nhiên</div>
-    </div>
-
-    <!-- Trang 3: Hình ảnh Happy Birthday -->
-    <div id="page3" style="display: none;">
-      <div class="img-container">
-        <img src="https://drive.google.com/uc?export=view&id=1cOn3UuQqor7ZHSKoAUTEifyq_SoCF1Ih" alt="Happy Birthday Image">
-      </div>
-      <div class="happy-birthday">Happy Birthday!</div>
-    </div>
-
-    <script>
-      function goToPage2() {
-        // Chuyển từ trang 1 sang trang 2 với hiệu ứng mờ
-        document.getElementById('page1').style.display = 'none';
-        document.getElementById('page2').style.display = 'block';
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cake-animation">
+            <img src="https://via.placeholder.com/200x200.png?text=Cake" alt="Bánh Sinh Nhật" id="cake">
+        </div>
         
-        // Sau một thời gian, chuyển sang trang 3
-        setTimeout(function() {
-          document.getElementById('page2').style.display = 'none';
-          document.getElementById('page3').style.display = 'block';
-        }, 6000); // Chờ 6 giây để chuyển trang
-      }
-    </script>
+        <h1 id="happyBirthday" class="happy-birthday">Happy Birthday!</h1>
+        
+        <div class="message">
+            <p>Chúc anh tuổi tác +1, niềm vui +10, tinh thần +100, sức khỏe +1000.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Chúc mừng sinh nhật Bé Cá Voi!</p>
+        </div>
+    </div>
 
-    <h1 class="made">Made by @hieuhfgr#8289</h1>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
