@@ -1,0 +1,60 @@
+body {
+    font-family: 'Sacramento', cursive;
+    background-color: #1E90FF; /* Màu xanh dương chủ đạo */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake-animation img {
+    width: 200px;
+    height: 200px;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+
+#happyBirthday {
+    font-size: 3rem;
+    animation: moveUp 1.5s ease-out;
+}
+
+@keyframes moveUp {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.message p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.footer p {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    animation: slideUp 3s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
